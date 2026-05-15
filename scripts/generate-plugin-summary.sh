@@ -53,7 +53,12 @@ count_markdown_files() {
     return
   fi
 
-  find "$target_dir" -type f -name "*.md" ! -name ".gitkeep" | wc -l | tr -d ' '
+  find "$target_dir" \
+    -type f \
+    -name "*.md" \
+    ! -name ".gitkeep" \
+    ! -name "README.md" \
+    | wc -l | tr -d ' '
 }
 
 print_plugin_table() {
