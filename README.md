@@ -18,9 +18,10 @@ Claude Code 기반의 공통 개발 워크플로우, 직군별 Skill, 코드 리
 
 ## 플러그인 구조 요약
 
-> 현재는 기본 폴더 구조만 생성된 상태이며, 실제 `SKILL.md`, Agent `.md`, Hook `.md` 파일은 아직 생성하지 않았습니다.  
-> 아래 MD 개수는 현재 레포지토리의 `.md` 파일 기준으로 집계해야 합니다.
+> 아래 표는 `plugins/*/skills`, `plugins/*/agents`, `plugins/*/hooks` 하위의 `.md` 파일 개수를 기준으로 자동 갱신됩니다.  
+> `.gitkeep` 파일은 집계 대상에 포함하지 않습니다.
 
+<!-- plugin-summary:start -->
 | 플러그인 | 대상 | Skills MD | Agents MD | Hooks MD | 설치 명령어 |
 |---|---|---:|---:|---:|---|
 | `common-core` | 전 직군 공통 | 0 | 0 | 0 | `/plugin install common-core@dev-toolkit` |
@@ -33,6 +34,7 @@ Claude Code 기반의 공통 개발 워크플로우, 직군별 Skill, 코드 리
 | `dba-tools` | DBA / DB 검토 담당자 | 0 | 0 | 0 | `/plugin install dba-tools@dev-toolkit` |
 | `data-tools` | 데이터 엔지니어 / 분석가 | 0 | 0 | 0 | `/plugin install data-tools@dev-toolkit` |
 | `ai-tools` | AI / Agent / RAG 개발자 | 0 | 0 | 0 | `/plugin install ai-tools@dev-toolkit` |
+<!-- plugin-summary:end -->
 
 ## 플러그인별 구성 기준
 
@@ -42,24 +44,20 @@ Claude Code 기반의 공통 개발 워크플로우, 직군별 Skill, 코드 리
 | `agents/` | 역할 기반 전문가 정의 | 백엔드 아키텍트, DBA 리뷰어, 보안 리뷰어 |
 | `hooks/` | 특정 시점의 자동 검증/제한 규칙 | 위험 명령 차단, 테스트 실행 확인, 보안 점검 |
 
-## 플러그인 요약 자동 생성
+## 플러그인 요약 자동 갱신
 
-`plugins/*/skills`, `plugins/*/agents`, `plugins/*/hooks` 하위의 `.md` 파일 개수는 아래 스크립트로 자동 집계할 수 있습니다.
+README의 플러그인 구성표는 GitHub Actions를 통해 자동 갱신됩니다.
+
+로컬에서 직접 갱신하려면 아래 명령어를 사용합니다.
 
 ```bash
-bash scripts/generate-plugin-summary.sh
+bash scripts/update-readme-plugin-summary.sh
 ```
 
-문서 파일로 저장하려면 아래 명령어를 사용합니다.
+표만 출력하려면 아래 명령어를 사용합니다.
 
 ```bash
-bash scripts/generate-plugin-summary.sh > docs/plugin-summary.md
-```
-
-Marketplace 이름을 바꿔 출력하려면 아래처럼 실행합니다.
-
-```bash
-MARKETPLACE_NAME=company-toolkit bash scripts/generate-plugin-summary.sh
+bash scripts/generate-plugin-summary.sh --table-only
 ```
 
 ## 우선 작성 순서
