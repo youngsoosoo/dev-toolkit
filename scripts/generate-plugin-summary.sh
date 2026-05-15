@@ -2,6 +2,7 @@
 set -euo pipefail
 
 MARKETPLACE_NAME="${MARKETPLACE_NAME:-dev-toolkit}"
+MODE="${1:-full}"
 
 get_target() {
   case "$1" in
@@ -55,39 +56,54 @@ count_markdown_files() {
   find "$target_dir" -type f -name "*.md" ! -name ".gitkeep" | wc -l | tr -d ' '
 }
 
+print_plugin_table() {
+  echo "| 플러그인 | 대상 | Skills MD | Agents MD | Hooks MD | 설치 명령어 |"
+  echo "|---|---|---:|---:|---:|---|"
+
+  if [ ! -d "plugins" ]; then
+    echo "plugins 디렉터리를 찾을 수 없습니다." >&2
+    exit 1
+  fi
+
+  for plugin_dir in plugins/*; do
+    [ -d "$plugin_dir" ] || continue
+
+    plugin_name="$(basename "$plugin_dir")"
+    target="$(get_target "$plugin_name")"
+
+    skills_count="$(count_markdown_files "$plugin_dir/skills")"
+    agents_count="$(count_markdown_files "$plugin_dir/agents")"
+    hooks_count="$(count_markdown_files "$plugin_dir/hooks")"
+    install_command="\`/plugin install ${plugin_name}@${MARKETPLACE_NAME}\`"
+
+    echo "| \`${plugin_name}\` | ${target} | ${skills_count} | ${agents_count} | ${hooks_count} | ${install_command} |"
+  done
+}
+
+if [ "$MODE" = "--table-only" ]; then
+  print_plugin_table
+  exit 0
+fi
+
 echo "# dev-toolkit 플러그인 구조 요약"
 echo
 echo "> 이 문서는 scripts/generate-plugin-summary.sh 실행 결과를 기반으로 갱신할 수 있습니다."
 echo
 echo "## 플러그인 구성표"
 echo
-echo "| 플러그인 | 대상 | Skills MD | Agents MD | Hooks MD | 설치 명령어 |"
-echo "|---|---|---:|---:|---:|---|"
-
-if [ ! -d "plugins" ]; then
-  echo "plugins 디렉터리를 찾을 수 없습니다." >&2
-  exit 1
-fi
-
-for plugin_dir in plugins/*; do
-  [ -d "$plugin_dir" ] || continue
-
-  plugin_name="$(basename "$plugin_dir")"
-  target="$(get_target "$plugin_name")"
-
-  skills_count="$(count_markdown_files "$plugin_dir/skills")"
-  agents_count="$(count_markdown_files "$plugin_dir/agents")"
-  hooks_count="$(count_markdown_files "$plugin_dir/hooks")"
-  install_command="\`/plugin install ${plugin_name}@${MARKETPLACE_NAME}\`"
-
-  echo "| \`${plugin_name}\` | ${target} | ${skills_count} | ${agents_count} | ${hooks_count} | ${install_command} |"
-done
+print_plugin_table
 
 echo
 echo "## 사용 방법"
 echo
 echo '```bash'
 echo "bash scripts/generate-plugin-summary.sh"
+echo '```'
+echo
+echo "README의 플러그인 구성표를 갱신하려면 아래 명령어를 사용합니다."
+echo
+echo '```bash'
+echo "bash scripts/update-readme-plugin-summary.sh"
 echo '```'
 echo
 echo "문서 파일로 저장하려면 아래 명령어를 사용합니다."
