@@ -24,7 +24,7 @@ Claude Code 기반의 공통 개발 워크플로우, 직군별 Skill, 코드 리
 <!-- plugin-summary:start -->
 | 플러그인 | 대상 | Skills MD | Agents MD | Hooks MD | 설치 명령어 |
 |---|---|---:|---:|---:|---|
-| `common-core` | 전 직군 공통 | 0 | 0 | 0 | `/plugin install common-core@dev-toolkit` |
+| `common-core` | 전 직군 공통 | 4 | 1 | 0 | `/plugin install common-core@dev-toolkit` |
 | `common-dev-workflow` | 개발 직군 공통 | 0 | 0 | 0 | `/plugin install common-dev-workflow@dev-toolkit` |
 | `common-documentation` | 전 직군 문서화 공통 | 0 | 0 | 0 | `/plugin install common-documentation@dev-toolkit` |
 | `common-security` | 전 직군 보안/운영 안전 | 0 | 0 | 0 | `/plugin install common-security@dev-toolkit` |
