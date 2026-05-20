@@ -1,0 +1,10 @@
+{
+  "name": "common-security",
+  "description": "Shared security and production-safety checks for secrets, privacy, dependencies, and dangerous operations.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Park YoungSoo"
+  },
+  "license": "MIT",
+  "keywords": ["security", "privacy", "production-safety", "risk"]
+}

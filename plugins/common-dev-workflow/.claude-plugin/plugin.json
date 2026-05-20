@@ -1,0 +1,10 @@
+{
+  "name": "common-dev-workflow",
+  "description": "Shared development workflow skills for Git preparation, planning, testing, PR summaries, and deployment checklists.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Park YoungSoo"
+  },
+  "license": "MIT",
+  "keywords": ["git", "testing", "pull-request", "deployment"]
+}

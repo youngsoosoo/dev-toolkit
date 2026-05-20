@@ -1,0 +1,10 @@
+{
+  "name": "backend-tools",
+  "description": "Backend engineering skills for API design, Spring Boot review, transaction boundaries, JPA, Redis, and backend testing.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Park YoungSoo"
+  },
+  "license": "MIT",
+  "keywords": ["backend", "spring-boot", "jpa", "redis", "testing"]
+}

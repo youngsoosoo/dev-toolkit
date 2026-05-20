@@ -1,0 +1,10 @@
+{
+  "name": "common-core",
+  "description": "Shared core skills for requirement clarification, task intake, impact scanning, and final response standards.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Park YoungSoo"
+  },
+  "license": "MIT",
+  "keywords": ["core", "requirements", "workflow", "review"]
+}

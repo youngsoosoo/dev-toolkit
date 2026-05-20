@@ -1,0 +1,10 @@
+{
+  "name": "common-documentation",
+  "description": "Shared documentation skills for task completion docs, weekly reports, release notes, incident reports, and decision records.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Park YoungSoo"
+  },
+  "license": "MIT",
+  "keywords": ["documentation", "report", "release-note", "incident"]
+}

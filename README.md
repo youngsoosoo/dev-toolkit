@@ -2,18 +2,45 @@
 
 Claude Code 기반의 공통 개발 워크플로우, 직군별 Skill, 코드 리뷰, 테스트, 문서화, 배포 검증을 관리하는 개발자 도구 모음입니다.
 
-## Marketplace 등록 명령어
+## Claude Code 설치 방법
 
-플러그인을 설치하기 전에 먼저 marketplace를 등록합니다.
+Claude Code에서 이 레포지토리를 Plugin Marketplace로 등록합니다.
 
 ```text
 /plugin marketplace add youngsoosoo/dev-toolkit
+```
+
+필요한 플러그인을 설치합니다.
+
+```text
+/plugin install common-core@dev-toolkit
+/plugin install common-security@dev-toolkit
+/plugin install common-dev-workflow@dev-toolkit
+/plugin install common-documentation@dev-toolkit
+/plugin install backend-tools@dev-toolkit
 ```
 
 설치 후 플러그인을 다시 로드합니다.
 
 ```text
 /reload-plugins
+```
+
+## 추천 설치 조합
+
+모든 개발자 공통:
+
+```text
+/plugin install common-core@dev-toolkit
+/plugin install common-security@dev-toolkit
+/plugin install common-dev-workflow@dev-toolkit
+/plugin install common-documentation@dev-toolkit
+```
+
+백엔드 개발자 추가:
+
+```text
+/plugin install backend-tools@dev-toolkit
 ```
 
 ## 플러그인 구조 요약
@@ -59,6 +86,18 @@ bash scripts/update-readme-plugin-summary.sh
 ```bash
 bash scripts/generate-plugin-summary.sh --table-only
 ```
+
+## 현재 설치 가능 플러그인
+
+현재 Claude Code Plugin Marketplace로 설치 가능한 플러그인은 아래 5개입니다.
+
+| 플러그인 | 설명 |
+|---|---|
+| `common-core` | 요구사항 정리, 작업 분류, 영향/리스크 스캔, 최종 응답 기준 |
+| `common-security` | Secret, 개인정보, 운영 안전, 의존성 리스크 점검 |
+| `common-dev-workflow` | Git 준비, 개발 계획, 테스트 전략, PR 요약, 배포 체크리스트 |
+| `common-documentation` | 작업 완료 문서, 주간 보고, 릴리즈 노트, 장애 보고, 의사결정 기록 |
+| `backend-tools` | API 설계, Spring Boot 리뷰, 트랜잭션, JPA, Redis, 백엔드 테스트 |
 
 ## 우선 작성 순서
 

@@ -1,0 +1,50 @@
+{
+  "name": "dev-toolkit",
+  "owner": {
+    "name": "Park YoungSoo",
+    "email": "lovepys01@gmail.com"
+  },
+  "description": "Claude Code plugin marketplace for shared development workflows, security checks, documentation, and role-specific engineering skills.",
+  "plugins": [
+    {
+      "name": "common-core",
+      "source": "./plugins/common-core",
+      "description": "Shared core skills for requirement clarification, task intake, impact scanning, and final response standards.",
+      "version": "0.1.0",
+      "category": "common",
+      "tags": ["core", "requirements", "workflow", "review"]
+    },
+    {
+      "name": "common-security",
+      "source": "./plugins/common-security",
+      "description": "Shared security and production-safety checks for secrets, privacy, dependencies, and dangerous operations.",
+      "version": "0.1.0",
+      "category": "security",
+      "tags": ["security", "privacy", "production-safety", "risk"]
+    },
+    {
+      "name": "common-dev-workflow",
+      "source": "./plugins/common-dev-workflow",
+      "description": "Shared development workflow skills for Git preparation, planning, testing, PR summaries, and deployment checklists.",
+      "version": "0.1.0",
+      "category": "workflow",
+      "tags": ["git", "testing", "pull-request", "deployment"]
+    },
+    {
+      "name": "common-documentation",
+      "source": "./plugins/common-documentation",
+      "description": "Shared documentation skills for task completion docs, weekly reports, release notes, incident reports, and decision records.",
+      "version": "0.1.0",
+      "category": "documentation",
+      "tags": ["documentation", "report", "release-note", "incident"]
+    },
+    {
+      "name": "backend-tools",
+      "source": "./plugins/backend-tools",
+      "description": "Backend engineering skills for API design, Spring Boot review, transaction boundaries, JPA, Redis, and backend testing.",
+      "version": "0.1.0",
+      "category": "backend",
+      "tags": ["backend", "spring-boot", "jpa", "redis", "testing"]
+    }
+  ]
+}
