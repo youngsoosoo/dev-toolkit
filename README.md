@@ -28,7 +28,7 @@ Claude Code 기반의 공통 개발 워크플로우, 직군별 Skill, 코드 리
 | `common-dev-workflow` | 개발 직군 공통 | 6 | 2 | 1 | `/plugin install common-dev-workflow@dev-toolkit` |
 | `common-documentation` | 전 직군 문서화 공통 | 5 | 1 | 0 | `/plugin install common-documentation@dev-toolkit` |
 | `common-security` | 전 직군 보안/운영 안전 | 4 | 1 | 1 | `/plugin install common-security@dev-toolkit` |
-| `backend-tools` | 백엔드 개발자 | 0 | 0 | 0 | `/plugin install backend-tools@dev-toolkit` |
+| `backend-tools` | 백엔드 개발자 | 7 | 3 | 1 | `/plugin install backend-tools@dev-toolkit` |
 | `frontend-tools` | 프런트엔드 개발자 | 0 | 0 | 0 | `/plugin install frontend-tools@dev-toolkit` |
 | `mobile-tools` | 모바일 개발자 | 0 | 0 | 0 | `/plugin install mobile-tools@dev-toolkit` |
 | `dba-tools` | DBA / DB 검토 담당자 | 0 | 0 | 0 | `/plugin install dba-tools@dev-toolkit` |
